@@ -1,15 +1,4 @@
 <?php
-// CORS
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
-header("Access-Control-Allow-Headers: Content-Type, Authorization");
-
-// Handle preflight request
-if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
-    http_response_code(200);
-    exit();
-}
-
 // PHP akan mencoba mengambil data asli dari Railway dulu, 
 // kalau tidak ada baru pakai data di dalam kutip.
 $host = getenv('MYSQLHOST') ?: "mysql.railway.internal";
